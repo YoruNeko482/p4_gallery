@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Mukta:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Qahiri&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://es-es.facebook.com/">
+    <link rel="stylesheet" href="https://www.instagram.com/">
+    <link rel="stylesheet" href="https://twitter.com/?lang=es">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        font-size: 22px;
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+    .nav a{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        text-decoration: none;
+        color:  rgb(236, 71, 236);
+        font-size: 300%;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    
+    :root{
+        --r_clar: #fcd5ce;
+        --t_clar: #fec89a;
+        --b_cian: #2a9d8f;
+        --m_fosc: #7209b7;
+        --b_clar: #90e0ef;
+        --r_fosc: #fec5bb;
+        --r_carn: #e5989b;
+        --b_black: rgb(24, 25, 26);
+    }
+    .container{
+        padding: 0 2em;
+    }
+    body>header .container{ 
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: var(--b_black);
+        height: 100vh;
+    }
+    section{
+        height: 100%;
+    }
+    footer{
+        height: 40vh;
+       
+        
+    }    
+     #portades .container{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+        
+     }
+     #escritors .container{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+     #portades .container h3{
+         width: 100%;
+     }
+     #escritors .container h3{
+         width: 100%;
+     }
+     
+    
+    #portades{
+        background-color: var(--b_black);
+        
+    }
+    #escritors{
+        background-color: var(--b_black);
+        height: 100%;
+    }
+    #xxss{
+        background-color: var(--b_black);
+    }
+    #xxss .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-between;
+    }
+    h1{
+        font-size: 6em;
+        font-family: 'IM Fell English SC', serif;
+        color: var(--m_fosc);
+       
+    }
+    h2{
+        font-size: 4em;
+        font-family: 'Mukta', sans-serif;
+        font-weight: 400;
+        color: var(--m_fosc);   
+    }
+    h3{
+        font-family: 'IM Fell English SC', serif;
+        font-size: 200%;
+    }
+    
+    .cover{
+        padding: 1.2em;
+        margin: 0.5em ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 300px;
+        max-height: 450%;
+        /*flex-grow: 1; fa queles images ocupen tota la pàgina*/
+        background-color: var(--r_carn);
+    }
+    .cover_img{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-grow: 1;
+    }
+    .cover_img img{
+        flex-grow: 1;
+        object-fit: cover;
+        object-position: center;
+    }
+    .redes_img{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-grow: 1;
+    }
+    .redes_img img{
+        flex-grow: 1;
+        object-fit: cover;
+        object-position: center;
+    }
+    .redes{
+        border-radius: 50%;
+        padding: 0.5em;
+        margin: 0.5em ;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 150px;
+        max-height: 225%;
+        background-color: rgb(45, 47, 49);
+        }
+
+    .people_img{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-grow: 1;
+    }
+    .people_img img{
+        flex-grow: 1;
+        object-fit: cover;
+        object-position: center;
+    }
+    .people{
+        padding: 1.2em;
+        margin: 0.5em ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 300px;
+        max-height: 450%;
+        background-color: var(--r_carn);}
+        
+
+    .cover header{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: flex-end;
+        font-size: 0.5em;
+        background-color: crimson;
+        border-radius: 40px;
+        padding: 6px;
+        
+    }
+    .cover h4{
+        font-family: 'Mukta', sans-serif;
+        font-size: 200%;
+    }
+    .people header{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: flex-end;
+        font-size: 0.5em;
+        background-color: crimson;
+        border-radius: 40px;
+        padding: 6px;
+    }
+    
+
+    .people h4{
+        font-family: 'Mukta', sans-serif;
+        font-size: 200%;
+    }
+    .people h5{
+        text-align: center;
+    }
+    .need {
+        font-size: 83%;
+    }
+    .need2 {
+        font-size: 70%;
+    }
+    .need3 {
+        font-size: 60%;
+    }
+    .need4 {
+        font-size: 60%;
+    }
+    .rainbow2{
+    font-size: 2.5em;
+    animation: colorRotate 2s linear 0s infinite;
+    }
+    .rainbow {
+    font-size: 9em;
+    animation: colorRotate 1s linear 0s infinite;
+    }
+
+    @keyframes colorRotate {
+     from {
+    color: #6666ff;
+     }
+    10% {
+    color: #0099ff;
+     }
+     50% {
+    color: #00ff00;
+     }
+     75% {
+    color: #ff3399;
+     }
+     100% {
+    color: #6666ff;
+     }}
+
+
+
+
+     .rainbow-bg{
+        border-radius: 50%;
+        animation: rainbow-bg 5s linear;
+        animation-iteration-count: infinite;
+        }
+   @keyframes rainbow-bg{
+        100%,0%{
+            background-color: rgb(255,0,0);
+        }
+        8%{
+            background-color: rgb(255,127,0);
+        }
+        16%{
+            background-color: rgb(255,255,0);
+        }
+        25%{
+            background-color: rgb(127,255,0);
+        }
+        33%{
+            background-color: rgb(0,255,0);
+        }
+        41%{
+            background-color: rgb(0,255,127);
+        }
+        50%{
+            background-color: rgb(0,255,255);
+        }
+        58%{
+            background-color: rgb(0,127,255);
+        }
+        66%{
+            background-color: rgb(0,0,255);
+        }
+        75%{
+            background-color: rgb(127,0,255);
+        }
+        83%{
+            background-color: rgb(255,0,255);
+        }
+        91%{
+            background-color: rgb(255,0,127);
+        }
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+             <hgroup>
+                <div>
+
+                    <h3 class="rainbow">Portades Manga</h3>
+    
+                </div></hgroup>
+        <nav class="nav">
+            <a href="#portades">Portades</a>
+            <a href="#escritors">Escriptors</a>
+            <a href="#xxss">Xarxes Socials</a>
+        </nav>
+    </div>
+    </header>
+    <main>
+    
+        <section id="portades">
+            
+            <div>
+            <h3 class="rainbow2">Portades</h3></div>
+            <div class="container">
+            <div class="cover">
+                <div class="cover_img">
+                    <img src="../sitioweb/images/onepiece.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>One Piece</h4>  
+                </header>
+            </div>
+            <div class="cover">
+                <div class="cover_img">
+                    <img src="../sitioweb/images/hanayome.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Goutobun no Hanayome</h4>  
+                </header>
+            </div>
+            <div class="cover">
+                <div class="cover_img">
+                    <img src="../sitioweb/images/naruto.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Naruto</h4>  
+                </header>
+            </div>
+            <div class="cover">
+                <div class="cover_img">
+                    <img src="../sitioweb/images/dragonball.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Dragon Ball</h4>  
+                </header>
+            </div>
+            <div class="cover">
+                <div class="cover_img">
+                    <img src="../sitioweb/images/mieruko.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Mieruko-chan</h4>  
+                </header>
+            </div>
+            <div class="cover">
+                <div class="cover_img">
+                    <img src="../sitioweb/images/goblin.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Goblin Slayer</h4>  
+                </header>
+            </div>
+                <div class="cover">
+                    <div class="cover_img">
+                        <img src="../sitioweb/images/arifureta.jpg" alt="jpg">
+                    </div>
+                    <header>
+                        <h4>Arifureta</h4>  
+                    </header>
+                </div>
+                <div class="cover">
+                    <div class="cover_img">
+                        <img src="../sitioweb/images/slime.jpg" alt="jpg">
+                    </div>
+                    <header>
+                        <h4>Slime Datta Ken</h4>  
+                    </header>
+                </div>
+                <div class="cover">
+                    <div class="cover_img">
+                        <img src="../sitioweb/images/tate.jpg" alt="jpg">
+                    </div>
+                    <header>
+                        <h4>Tate no Yuusha</h4>  
+                    </header>
+                </div>
+                <div class="cover">
+                    <div class="cover_img">
+                       <img src="../sitioweb/images/oreimo.jpg" alt="jpg">
+                    </div>
+                    <header>
+                        <h4>Oreimo</h4>  
+                    </header>
+                </div>
+                <div class="cover">
+                    <div class="cover_img">
+                       <img src="../sitioweb/images/taktop.jpg" alt="jpg">
+                    </div>
+                    <header>
+                        <h4>Takt. Op</h4>  
+                    </header>
+                </div>
+                <div class="cover">
+                    <div class="cover_img">
+                       <img src="../sitioweb/images/musume.jpg" alt="jpg">
+                    </div>
+                    <header>
+                        <h4>Monster Musume</h4>  
+                    </header>
+                </div>
+        </div>
+        </section>
+        <section id="escritors">
+            <h3 class="rainbow2">Escriptors</h3>
+        <div class="container">    
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/oda.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Oda</h4>
+                </header>
+                <div >
+                    <h5>"私のナカマは最も重要です"</h5>
+                </div>
+
+            </div>
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/tsukasa.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Tsukasa</h4>
+                </header>
+                <div class="need">
+                    <h5>"スラムダンク、チームで遊ぼう！"</h5>
+                </div>
+
+            </div>
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/haruba.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Haruba</h4>
+                </header>
+                <div class="need4">
+                    <h5>"自己努力は重要ですが、他人を信頼することも重要です"</h5>
+                </div>
+
+            </div>
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/naoki.jpeg" alt="jpeg">
+                </div>
+                <header>
+                    <h4>Naoki Urasawa</h4>
+                </header>
+                <div class="need3">
+                    <h5>"彼らがあなたに言うすべて、またはあなたが見るものを決して信じないでください"</h5>
+                </div>
+
+            </div>
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/kishimoto.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Masashi Kishimoto</h4>
+                </header>
+                <div class="need2">
+                    <h5>"子供たちは父親が選んだ道に縛られるべきではありません"</h5>
+                </div>
+
+            </div>
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/tezuka.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Osamu Tezuka</h4>
+                </header>
+                <div class="need3">
+                    <h5>"私たちには生命を創造する権利はありませが、私たちが持っているものを生きる権利はありません"</h5>
+                </div>
+
+            </div>
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/inoue.jpg" alt="jpg">
+                </div>
+                <header>
+                    <h4>Takehiko Inoue</h4>
+                </header>
+                <div class="need2">
+                    <h5>"常に最後まで戦う、降伏はオプションではありません"</h5>
+                </div>
+
+            </div>
+            <div class="people">
+                <div class="people_img">
+                    <img src="../sitioweb/images/escritores/arakawa.png" alt="png">
+                </div>
+                <header>
+                    <h4>Hiromu Arakawa</h4>
+                </header>
+                <div class="need2">
+                    <h5>"あなたが提供する以上のものを受け取ることを期待しないでください"</h5>
+                </div>
+
+            </div>
+        </div>
+        </section>
+    </main>
+    <footer id="xxss">
+        <h3 class="rainbow2">Xarxes Socials</h3>
+        <div class="container">
+            <div class="redes">
+                <div class="rainbow-bg">
+                <div class="redes_img">
+                    <a href="https://es-es.facebook.com/"><img src="../sitioweb/images/escritores/fbook.png" alt="png"></a>
+                </div>
+            </div>
+            </div>
+            <div class="redes">
+                <div class="rainbow-bg">
+                <div class="redes_img">
+                    <a href="https://www.instagram.com/"><img src="../sitioweb/images/escritores/insta.png" alt="png"></a>
+                </div>
+            </div>
+            </div>
+            <div class="redes">
+                <div class="rainbow-bg">
+                <div class="redes_img">
+                    <a href="https://twitter.com/?lang=es"><img src="../sitioweb/images/escritores/twitter.png" alt="png"></a>
+                </div>
+                </div>
+            </div>
+    </div>
+    </footer>
+</body>
+</html>
